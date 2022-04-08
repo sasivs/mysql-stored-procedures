@@ -74,8 +74,10 @@ delimiter ;
 call get_count(@count_stud);
 select @count_stud;
 
+drop procedure if exists get_marks;
 delimiter //
 create procedure get_marks(in sid int, out marks int)
+begin
 select total_marks into marks from studentmarks where stud_id=sid;
 end //
 delimiter ;
@@ -121,28 +123,19 @@ delimiter ;
 call insert_record(3,450,"A",@count_rows);
 select @count_rows;
 
+drop procedure if exists insert_record_1;
+
 delimiter //
 create procedure insert_record_1(in sid int, in t_mar int, 
 in g varchar(5), out count_rows int)
 begin
-declare valid int default 1;
 declare continue handler for 1062
-set vaild = 0;
-if valid = 1 then
+select 'duplicate key occured' as Message;
 insert into studentmarks 
 values (sid, t_mar, g);
-end if;
 select count(*) into count_rows from studentmarks;
 end //
 delimiter ;
 
-call insert_record(3,450,"A",@count_rows);
+call insert_record_1(3,450,"A",@count_rows);
 select @count_rows;
-
-
-
-
-
-
-
-
