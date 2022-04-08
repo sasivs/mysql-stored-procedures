@@ -11,13 +11,21 @@ INSERT INTO studentMarks(total_marks, grade) VALUES(450, 'A'), (480, 'A+'), (490
 ,(250, 'D'),(200,'E'),(100,'F'),(150,'F'),(220, 'E');
 
 1.create a stored procedure to fetch the details of students with the student ID being passed as an input parameter.
+
 2. create a stored procedure to fetch the details of students having certain grade with the grade being passed as an input parameter.
+
 3. create a stored procedure to calculate the average marks of all the students from the studentMarks table and return the average as an OUT field.
+
 4. create a stored procedure to fetch the minimum mark corresponding to a grade with the grade being passed as an input parameter and return the minimum mark as an OUT field.
+
 5. Create a stored procedure that takes an initial value of the counter and increment it with a given number.
+
 6. create a stored procedure that takes a studentID as a input parameter and increments  the marks of the student by a given number as INOUT parameter.The final marks of the student must be stored in the INOUT paramaeter.
+
 7. create a stored procedure  to find the count of students who is having marks below the average marks of all the students.
+
 8. Write a nested stored procedure to find If a student marks are above average – then the result would be PASS else – FAIL.
+
 9. Write a stored procedure to take studentId and depending on the studentMarks you 
 need to return the class according to the below criteria.
 Marks >= 400 : Class – First Class
